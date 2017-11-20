@@ -1,86 +1,158 @@
-*{
-    box-sizing: border-box;
-}
-html,body,#app {
-    height:100%;
-    margin: 0;
-    padding: 0;
-}
-body {
-    background: #eee;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-h1{
-    font-weight: 200;
-    color: #3b414c;
-    font-size: 20px;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-.app {
-    white-space: nowrap;
-    height:100%;
-}
-.list {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    white-space: normal;
-    height: 100%;
-    width: 33%;
-    padding: 0 20px;
-    overflow: auto;
-}
-.list:not(:last-child):after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 99%;
-    background: linear-gradient(to bottom, #eee 0%, #ccc 50%, #eee 100%) fixed;
-}
-.card {
-    position: relative;
-    z-index: 1;
-    background: #fff;
-    width: 100%;
-    padding: 10px 10px 10px 15px;
-    margin: 0 0 10px 0;
-    overflow: auto;
-    border: 1px solid #e5e5df;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-}
-.card__title {
-    font-weight: bold;
-    border-bottom: solid 5px transparent;
-}
-.card__title:before {
-    display: inline-block;
-    width: 1em;
-    content: '▶';
-}
-.card__title--is-open:before {
-    content: '▼';
-    }
-.checklist__task:first-child {
+.childContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 10px;
-    padding-top: 10px;
-    border-top: dashed 1px #ddd;
-    }
-.checklist__task--remove:after{
+}
+
+.tree-container {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.content {
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.child {
+    margin: 4px;
     display: inline-block;
-    color: #d66;
-    content: "+";
-    }
-.checklist--add-task {
-    border: 1px dashed #bbb;
+}
+
+.addLink{
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+}
+
+/* FORM */
+
+.formBackground {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(00,00,00,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formBackground .formContainer {
+    border-radius: 4px;
+    background-color: white;
+}
+
+.update-form {
+    padding: 15px;
+    width: 300px;
+}
+
+.update-form .button-container {
+    text-align: center;
+}
+
+.update-form .button-container button {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.optional-color-picker label {
+    margin-bottom: 0;
+}
+
+.optional-color-picker .checkbox-container {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 3px;
-    }
+    height: 2em;
+    margin: 0 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.optional-color-picker .checkbox-container input[type=checkbox] {
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+.optional-color-picker .color-picker-container {
+    position: relative;
+}
+
+.optional-color-picker .color-picker-container .picker-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* DROP NODES */
+
+.drop-node {
+    position: relative;
+    width: 0;
+}
+
+.drop-node .inner-node {
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 4px;
+    z-index: 1;
+    opacity: 0.8;
+    width: 50px;
+    height: 3em;
+    background-color: #fff29f;
+    border: 3px dotted #ffdb31;
+    border-radius: 5px;
+}
+
+.drop-node-topmost {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.drop-node-topmost .inner-node {
+    margin-top: 0;
+    height: 30px;
+}
+
+/* SYNC panel */
+
+.sync-panel {
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sync-panel__inner {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 4em;
+    border-radius: 4px;
+}
+
+.sync-panel__inner img {
+    width: 15vw;
+}
