@@ -1,0 +1,209 @@
+body {
+    background-color: #121212;
+}
+
+.orangeText {
+    color: #a98b69;
+}
+
+.menuItem {
+    position: relative;
+    display: inline;
+}
+.menuItem a {
+    color: white;
+}
+.menuItem:hover a {
+    text-decoration: none;
+}
+
+.menuItem.active::before, .menuItem:hover::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: block;
+    background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 50%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(0, 0, 0, 0) 60%
+    );
+}
+
+.profilePicture {
+    margin-top: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .profilePicture {
+        margin-top: -2rem;
+    }
+}
+
+.lead.own {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.capabilitiesColumn {
+    max-width: 576px;
+}
+
+@media only screen and (min-width: 768px) {
+    .capabilitiesColumn {
+        max-width: 768px;
+    }
+}
+
+.capabilityItem {
+    background-color: #191919;
+}
+
+.capabilityItem li span.oi {
+    transform: scale(0.75);
+    color: #a98b69;
+}
+
+a.screenshotLink:hover > div.screenshotText {
+    display: flex;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(169, 139, 105, 0.85);
+    color: white;
+}
+
+.screenshotText {
+    display: none;
+}
+
+.aboutUsIndicatorContainer li {
+    height: 0.7rem;
+    width: 0.7rem;
+}
+
+.memberProfile, .memberProfileDown {
+    z-index: 10;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.memberProfileDown {
+    z-index: 5;
+}
+
+.memberProfile:hover, .memberProfileDown:hover {
+    z-index: 15;
+}
+
+.memberProfile div.memberContent {
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(169, 139, 105, 0.85);
+    display: none;
+    color: white;
+}
+
+.memberProfile:hover div.memberContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+div.memberContent a {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .teamNextRow {
+        margin-top: -5rem;
+    }
+}
+
+.subscribeForm label {
+    display: block;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.subscribeForm input, .subscribeForm input:focus {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    height: 6rem;
+    outline: none;
+}
+
+.subscribeForm input::placeholder, .subscribeForm input {
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+.subscribeForm input:focus::placeholder {
+    color: transparent;
+}
+
+@media only screen and (min-width: 992px) {
+    .photoStream div:nth-child(odd) img {
+        margin-top: 0;
+    }
+
+    .photoStream div:nth-child(even) img {
+        margin-top: 2rem;
+    }
+
+    .photoStream div:nth-child(odd) img:hover {
+        margin-top: 1rem;
+    }
+
+    .photoStream div:nth-child(even) img:hover {
+        margin-top: 1rem;
+    }
+}
+
+.topLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.topLink .stick {
+    display: block;
+    width: 0.1rem;
+    height: 3.5rem;
+    background-color: white
+}
+.topLink:hover {
+    color: #a98b69;
+    text-decoration: none;
+}
+.topLink:hover .stick {
+    background-color: #a98b69;
+}
+
+.footerIcons a {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    color: #8c8c8c;
+}
+
+.footerIcons a:hover {
+    color: #8c8c8c;
+    text-decoration: none;
+}
+
